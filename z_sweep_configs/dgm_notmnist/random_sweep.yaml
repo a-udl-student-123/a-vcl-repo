@@ -1,0 +1,31 @@
+method: random
+metric:
+  name: evaluation/average_log_likelihood
+  goal: maximize
+parameters:
+  experiment_type:
+    value: "letter_notmnist"
+  method:
+    value: "standard_vcl"
+  num_workers:
+    value: 1
+  num_tasks:
+    value: 10
+  epochs:
+    value: 200
+  use_classifier:
+    value: true
+  batch_size:
+    value: 256
+  seed:
+    value: 42
+  n_train_samples:
+    value: 1
+  n_eval_samples:
+    value: 100
+  early_stopping_threshold:
+    value: 30.0
+  lr:
+    values: [0.0005]
+  init_std:
+    values: [0.000005, 0.000001, 0.0000005]

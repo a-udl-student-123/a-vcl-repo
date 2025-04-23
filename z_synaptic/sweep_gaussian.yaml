@@ -1,0 +1,40 @@
+method: random
+metric:
+  goal: maximize
+  name: eval/avg_accuracy
+parameters:
+  optimizer_type:
+    value: "sgd"
+  
+  seed:
+    values: [42]
+  
+  num_tasks:
+    values: [10]
+
+  epochs:
+    values: [20]
+    
+  lr:
+    values: [0.01]
+    
+  si_lambda:
+    values: [0.5]
+    
+  si_epsilon:
+    values: [0.005]
+  omega_decay:
+    values: [0.95]
+    
+  momentum:
+    values: [0.9]
+    
+  batch_size:
+    values: [256]
+    
+  hidden_size:
+    values: [100]
+  num_workers:
+    values: [1]
+  early_stopping_threshold:
+    values: [0.4] 

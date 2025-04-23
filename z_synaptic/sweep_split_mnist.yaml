@@ -1,0 +1,36 @@
+program: sweep_runner_si_split_mnist.py
+method: random
+metric:
+  name: evaluation/average_accuracy
+  goal: maximize
+parameters:
+  experiment_type:
+    value: split_mnist
+  num_tasks:
+    value: 5
+  hidden_size:
+    value: 256
+  batch_size:
+    value: 256
+  num_workers:
+    value: 4
+  seed:
+    value: 42
+  optimizer_type:
+    value: sgd
+  momentum:
+    value: 0.9
+  single_batch:
+    value: false
+  early_stopping_threshold:
+    value: 0.96
+  epochs:
+    values: [60, 80]
+  lr:
+    values: [0.01]
+  si_lambda:
+    values: [1.75, 2, 2.5]
+  si_epsilon:
+    values: [0.001]
+  omega_decay:
+    values: [0.9] 

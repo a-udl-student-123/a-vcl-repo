@@ -1,0 +1,35 @@
+method: bayes
+metric:
+  name: evaluation/average_log_likelihood
+  goal: maximize
+parameters:
+  experiment_type:
+    value: "digit_mnist"
+  method:
+    value: "standard_vcl"
+  num_workers:
+    value: 1
+  num_tasks:
+    value: 10
+  epochs:
+    value: 200
+  use_classifier:
+    value: true
+  batch_size:
+    value: 256
+  seed:
+    value: 42
+  n_train_samples:
+    value: 1
+  n_eval_samples:
+    value: 100
+  early_stopping_threshold:
+    value: 13.0
+  lr:
+    min: 0.00001
+    max: 0.01
+    distribution: log_uniform_values
+  init_std:
+    min: 0.0000001
+    max: 0.1
+    distribution: log_uniform_values

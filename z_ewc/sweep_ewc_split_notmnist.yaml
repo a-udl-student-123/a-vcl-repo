@@ -1,0 +1,26 @@
+program: z_ewc/wandb_sweep_ewc_split_notmnist.py
+method: random
+metric:
+  name: evaluation/average_accuracy
+  goal: maximize
+parameters:
+  experiment_type:
+    value: split_notmnist
+  num_tasks:
+    value: 5
+  batch_size:
+    value: 256
+  num_workers:
+    value: 2
+  seed:
+    value: 42
+  hidden_size:
+    value: 150
+  epochs_per_task:
+    values: [20, 40]
+  lr:
+    values: [0.1, 0.01, 0.05]
+  ewc_lambda:
+    values: [10.0, 100.0, 50.0, 1000.0, 500.0]
+  n_train_samples:
+    values: [2000] 

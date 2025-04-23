@@ -1,0 +1,26 @@
+program: z_lp/wandb_sweep_lp_perm_mnist.py
+method: random
+metric:
+  name: evaluation/average_accuracy
+  goal: maximize
+parameters:
+  experiment_type:
+    value: permuted_mnist
+  num_tasks:
+    value: 10
+  hidden_size:
+    value: 100
+  batch_size:
+    value: 256
+  num_workers:
+    value: 2
+  seed:
+    value: 42
+  epochs_per_task:
+    values: [20, 40]
+  lr:
+    values: [0.1, 0.01, 0.05]
+  lp_lambda:
+    values: [0.1, 1.0, 10.0, 100.0, 50.0, 1000.0, 500.0, 5000.0]
+  n_train_samples:
+    values: [2000] 

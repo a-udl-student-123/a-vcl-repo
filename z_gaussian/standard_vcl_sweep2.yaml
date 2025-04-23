@@ -1,0 +1,44 @@
+program: wandb_sweep_gaussian_standard2.py
+method: random
+metric:
+  name: eval/avg_rmse
+  goal: minimize
+parameters:
+  method:
+    value: standard_vcl
+  num_tasks:
+    value: 10
+  hidden_size:
+    value: 100
+  batch_size:
+    value: 256
+  epochs:
+    value: 100
+  seed:
+    value: 42
+  use_ml_initialization:
+    value: True
+  ml_epochs:
+    value: 100
+  coreset_size:
+    value: 0
+  kcenter_batch_size:
+    value: 1024
+  n_eval_samples:
+    value: 100
+  n_train_samples:
+    values: [5]
+  num_workers:
+    value: 4
+  lr:
+    values: [0.001]
+  init_std:
+    values: [5e-12]
+  different_perm_init:
+    values: [True]
+  adaptive_std:
+    value: False
+  adaptive_std_epsilon:
+    value: 0
+  early_stopping_threshold:
+    value: 1.5

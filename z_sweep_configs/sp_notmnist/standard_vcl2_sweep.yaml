@@ -1,0 +1,52 @@
+program: wandb_sweep_split_notmnist_stand2.py
+method: random
+metric:
+  name: evaluation/average_accuracy
+  goal: maximize
+parameters:
+  method:
+    value: multi_head_vcl
+  experiment_type:
+    value: split_notmnist
+  num_tasks:
+    value: 5
+  hidden_size:
+    value: 150
+  single_batch:
+    value: False
+  batch_size:
+    value: 256
+  epochs:
+    value: 120
+  seed:
+    value: 42
+  use_ml_initialization:
+    value: True
+  ml_epochs:
+    value: 120
+  use_kcenter:
+    value: False
+  kcenter_batch_size:
+    value: 1024
+  use_task_specific_prediction:
+    value: True
+  n_eval_samples:
+    value: 100
+  n_train_samples:
+    value: 1
+  num_workers:
+    value: 1
+  save_checkpoint:
+    value: True
+  coreset_size:
+    value: 0
+  lr:
+    values: [0.001, 0.005, 0.01, 0.0005, 0.0001]
+  init_std:
+    values: [0.00001, 0.000001, 0.00000001, 0.0000000001]
+  different_perm_init:
+    value: False
+  adaptive_std:
+    values: [True]
+  adaptive_std_epsilon:
+    values: [0.1, 0.01] 

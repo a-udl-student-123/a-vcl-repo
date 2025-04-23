@@ -1,0 +1,40 @@
+program: z_ewc_dgm/wandb_sweep_ewc_dgm_notmnist.py
+method: grid
+metric:
+  name: eval/average_log_likelihood
+  goal: maximize
+parameters:
+  experiment_type:
+    value: letter_notmnist
+  num_tasks:
+    value: 10
+  hidden_size:
+    value: 500
+  latent_size:
+    value: 50
+  batch_size:
+    value: 256
+  num_workers:
+    value: 2
+  seed:
+    value: 42
+  optimizer_type:
+    value: sgd
+  momentum:
+    value: 0.9
+  early_stopping_threshold:
+    value: None
+  use_classifier:
+    value: True
+  input_size:
+    value: 784  
+  
+  # Variable parameters
+  epochs:
+    values: [400]
+  lr:
+    values: [0.001]
+  ewc_lambda:
+    values: [10.0, 100.0, 1000.0, 10000.0]
+  n_train_samples:
+    values: [2000] 
